@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://d4ee1mjsv5vmo"]
+
+[ext_resource type="Script" uid="uid://cw1rfe17gdtcg" path="res://Scripts/testing_scene.gd" id="1_h21bk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oq1i5"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_h21bk"]
+sky_material = SubResource("ProceduralSkyMaterial_oq1i5")
+
+[sub_resource type="Environment" id="Environment_ybjcv"]
+background_mode = 2
+sky = SubResource("Sky_h21bk")
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="TorusMesh" id="TorusMesh_lbtrp"]
+rings = 32
+ring_segments = 16
+
+[node name="Testing Scene" type="Node3D" unique_id=814323549]
+script = ExtResource("1_h21bk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1538506263]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=871725501]
+environment = SubResource("Environment_ybjcv")
+
+[node name="Meshs" type="Node3D" parent="." unique_id=1961539967]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Meshs" unique_id=2017541767]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Meshs/CSGCombiner3D" unique_id=2091226732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_yf5fn")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Meshs/CSGCombiner3D" unique_id=236623222]
+transform = Transform3D(0.80379415, -0.4678093, -0.3675181, 0.5030119, 0.8642796, 0, 0.3176384, -0.18486598, 0.93001634, -1.7702854, -1, -2.84566)
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Meshs/CSGCombiner3D" unique_id=713867777]
+transform = Transform3D(0.43387085, -0.28191286, -0.8557342, -0.51317686, 0.7033399, -0.49189693, 0.7405441, 0.65256274, 0.16048747, 1.536415, -0.7499269, -2.9052668)
+mesh = SubResource("TorusMesh_lbtrp")
+
+[node name="Scanner CSG" type="CSGSphere3D" parent="Meshs/CSGCombiner3D" unique_id=1792243339]
+operation = 1
+radius = 5.0
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Meshs/CSGCombiner3D/Scanner CSG" unique_id=1352036911]
+operation = 2
+radius = 4.0
+
+[node name="Timer" type="Timer" parent="." unique_id=971975033]
+wait_time = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=853950310]

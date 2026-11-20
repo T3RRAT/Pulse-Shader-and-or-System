@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dc1sfj5iylxqj"]
+
+[ext_resource type="PackedScene" uid="uid://cw27gxriv525e" path="res://Scenes/Tether Ship wip9.fbx" id="1_7q7q3"]
+
+[node name="Node3D" type="Node3D" unique_id=1452560539]
+
+[node name="Tether Ship wip9" parent="." unique_id=299066318 instance=ExtResource("1_7q7q3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 0, 0)

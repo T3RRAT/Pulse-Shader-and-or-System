@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://duguotm0kc0ey"]
+
+[ext_resource type="PackedScene" uid="uid://cw27gxriv525e" path="res://Scenes/Tether Ship wip9.fbx" id="1_m6326"]
+
+[node name="Tether Ship wip9" unique_id=299066318 instance=ExtResource("1_m6326")]
+
+[node name="Player Ref" parent="." index="13" unique_id=175930629]
+visible = false
+
+[node name="Ship dupe before applying mirrir" parent="." index="15" unique_id=2142107274]
+visible = false
+
+[node name="Window Front" parent="." index="17" unique_id=1882602079]
+visible = false
