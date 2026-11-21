@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://d4ee1mjsv5vmo"]
 
 [ext_resource type="Script" uid="uid://cw1rfe17gdtcg" path="res://Scripts/testing_scene.gd" id="1_h21bk"]
+[ext_resource type="ArrayMesh" uid="uid://d5n4aw56khtn" path="res://Scenes/might be final.obj" id="2_h21bk"]
+[ext_resource type="ArrayMesh" uid="uid://cfclq1db6hufm" path="res://Scenes/another one.obj" id="2_ybjcv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oq1i5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -35,26 +37,43 @@ environment = SubResource("Environment_ybjcv")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Meshs" unique_id=2017541767]
 
+[node name="Custom 2" type="CSGMesh3D" parent="Meshs/CSGCombiner3D" unique_id=145755163]
+transform = Transform3D(1.3113416e-07, -1.14641115e-14, 2.9999998, -2.6226832e-07, -2.9999998, 0, 3, -2.6226832e-07, -1.3113416e-07, 0, 0, 4.9567366)
+mesh = ExtResource("2_ybjcv")
+
+[node name="Custom" type="CSGMesh3D" parent="Meshs/CSGCombiner3D" unique_id=843419404]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
+calculate_tangents = false
+mesh = ExtResource("2_h21bk")
+
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Meshs/CSGCombiner3D" unique_id=2091226732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_yf5fn")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Meshs/CSGCombiner3D" unique_id=236623222]
 transform = Transform3D(0.80379415, -0.4678093, -0.3675181, 0.5030119, 0.8642796, 0, 0.3176384, -0.18486598, 0.93001634, -1.7702854, -1, -2.84566)
+visible = false
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="Meshs/CSGCombiner3D" unique_id=713867777]
 transform = Transform3D(0.43387085, -0.28191286, -0.8557342, -0.51317686, 0.7033399, -0.49189693, 0.7405441, 0.65256274, 0.16048747, 1.536415, -0.7499269, -2.9052668)
+visible = false
 mesh = SubResource("TorusMesh_lbtrp")
 
 [node name="Scanner CSG" type="CSGSphere3D" parent="Meshs/CSGCombiner3D" unique_id=1792243339]
 operation = 1
+calculate_tangents = false
 radius = 5.0
+smooth_faces = false
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Meshs/CSGCombiner3D/Scanner CSG" unique_id=1352036911]
 operation = 2
+calculate_tangents = false
 radius = 4.0
+smooth_faces = false
 
 [node name="Timer" type="Timer" parent="." unique_id=971975033]
 wait_time = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=853950310]
+fov = 70.0

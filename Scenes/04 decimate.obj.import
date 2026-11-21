@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bydtce4e8he34"
+path="res://.godot/imported/04 decimate.obj-020a7002e135a4fbca8d03e4ccbf98bb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/04 decimate.obj-020a7002e135a4fbca8d03e4ccbf98bb.mesh"]
+
+source_file="res://Scenes/04 decimate.obj"
+dest_files=["res://.godot/imported/04 decimate.obj-020a7002e135a4fbca8d03e4ccbf98bb.mesh", "res://.godot/imported/04 decimate.obj-020a7002e135a4fbca8d03e4ccbf98bb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
